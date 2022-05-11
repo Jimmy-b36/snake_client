@@ -1,21 +1,23 @@
-const { conn } = require("./client");
-
+let connection;
 const handleUserInput = function (data) {
   if (data === "\u0003") {
     console.log("Thanks for playing!");
     process.exit();
   }
   if (data === "\u0077") {
-    conn.write("Move: up");
+    connection.write("Move: up");
   }
   if (data === "\u0061") {
-    conn.write("Move: left");
+    connection.write("Move: left");
   }
   if (data === "\u0073") {
-    conn.write("Move: down");
+    connection.write("Move: down");
   }
   if (data === "\u0064") {
-    conn.write("Move: right");
+    connection.write("Move: right");
+  }
+  if (data === "t") {
+    connection.write("Say: yo wassup homies");
   }
 };
 
