@@ -6,6 +6,7 @@ const connect = () => {
     port: 50541,
   });
   conn.on("connect", () => {
+    conn.write("Name: JAB");
     console.log("You have been connected!");
   });
   conn.on("disconnect", () => {
